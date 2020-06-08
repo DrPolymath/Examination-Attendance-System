@@ -39,7 +39,6 @@ if (isset($_POST["daftar"])) {
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href=""
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
@@ -62,13 +61,19 @@ if (isset($_POST["daftar"])) {
         
     </style>
      <?php require 'nav.php'; ?>
-           <div class="wrapper" style="padding: 40px;width: 800px"> 
+           <div class="wrapper" style="padding: 40px;width: 1200px"> 
        
-           <div class="card card-5">
-                <div class="card-heading">
-                    <h1 class="title">REKOD KEHADIRAN PEPERIKSAAN PELAJAR <h1>
-                </div>
-           </div>
+            <div class="card card-5">
+                  <div class="card-heading">
+                      <h1 class="title">REKOD KEHADIRAN PEPERIKSAAN PELAJAR <h1>
+                  </div>
+                  <div class="card-body">
+                   <?php
+                    janaJadualPeperiksaanKehadiranRekod();
+                   ?>
+               </div>
+            </div>
+          </div>
                 
 
     <!-- Jquery JS-->

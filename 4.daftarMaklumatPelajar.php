@@ -506,7 +506,7 @@ $('#pelajar').on('submit', function(event){
             data: form_data,
             success: function(data){
                 $('#daftarKursusModal').modal('show');
-                alert('Pendaftaran Pelajar Berjaya!');
+                
             }
         });
     }
@@ -527,7 +527,7 @@ $('#kursusPelajar').on('submit', function(e){
 });
 
 $('#tambahKursusPelajar').on('submit', function(e){
-    event.preventDefault();
+    e.preventDefault();
     var form_data = $(this).serialize();
     $.ajax({
         type: "POST",

@@ -482,6 +482,84 @@ function janaJadualPeperiksaan()
     </form>';
   }
 }
+function janaJadualPeperiksaanKehadiran()
+{
+  global $conn;
+  $sql = "SELECT JenisPeperiksaan,Kursus,NamaPensyarah,Tempat,Tarikh,Masa FROM peperiksaan";
+  $result = mysqli_query($conn, $sql);
+  if (mysqli_num_rows($result) > 0) {
+    echo 
+      '<form method="get">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">JenisPeperiksaan</th>
+            <th scope="col">Kursus</th>
+            <th scope="col">NamaPensyarah</th>
+            <th scope="col">Tempat</th>
+            <th scope="col">Tarikh</th>
+            <th scope="col">Masa</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>';
+    while($row = mysqli_fetch_assoc($result)) {
+        echo'
+        <tr>
+          <td>'.$row["JenisPeperiksaan"].'</td>
+          <td>'.$row["Kursus"].'</td>
+          <td>'.$row["NamaPensyarah"].'</td>
+          <td>'.$row["Tempat"].'</td>
+          <td>'.$row["Tarikh"].'</td>
+          <td>'.$row["Masa"].'</td>
+          <td><button class="btn btn--radius-2 btn--blue" type="button" data-toggle="modal" data-target="#SenaraiPelajar" onclick="janaSenaraiPelajar(\''.$row["JenisPeperiksaan"].'\',\''.$row["Kursus"].'\',\''.$row["NamaPensyarah"].'\',\''.$row["Tempat"].'\',\''.$row["Tarikh"].'\',\''.$row["Masa"].'\')">Jana Kehadiran</button></td>
+        </tr>
+        ';
+    }
+    echo '</tbody>
+    </table>
+    </form>';
+  }
+}
+function janaJadualPeperiksaanKehadiranRekod()
+{
+  global $conn;
+  $sql = "SELECT JenisPeperiksaan,Kursus,NamaPensyarah,Tempat,Tarikh,Masa FROM peperiksaan";
+  $result = mysqli_query($conn, $sql);
+  if (mysqli_num_rows($result) > 0) {
+    echo 
+      '<form method="get">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">JenisPeperiksaan</th>
+            <th scope="col">Kursus</th>
+            <th scope="col">NamaPensyarah</th>
+            <th scope="col">Tempat</th>
+            <th scope="col">Tarikh</th>
+            <th scope="col">Masa</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>';
+    while($row = mysqli_fetch_assoc($result)) {
+        echo'
+        <tr>
+          <td>'.$row["JenisPeperiksaan"].'</td>
+          <td>'.$row["Kursus"].'</td>
+          <td>'.$row["NamaPensyarah"].'</td>
+          <td>'.$row["Tempat"].'</td>
+          <td>'.$row["Tarikh"].'</td>
+          <td>'.$row["Masa"].'</td>
+          <td><button class="btn btn--radius-2 btn--blue" type="button" data-toggle="modal" data-target="#SenaraiPelajar" onclick="janaSenaraiPelajar(\''.$row["JenisPeperiksaan"].'\',\''.$row["Kursus"].'\',\''.$row["NamaPensyarah"].'\',\''.$row["Tempat"].'\',\''.$row["Tarikh"].'\',\''.$row["Masa"].'\')">Jana Laporan Kehadiran</button></td>
+        </tr>
+        ';
+    }
+    echo '</tbody>
+    </table>
+    </form>';
+  }
+}
 function padamDataPeperiksaan($JenisPeperiksaan){
   global $conn;
   $query = "DELETE FROM peperiksaan WHERE JenisPeperiksaan='$JenisPeperiksaan'" ;
