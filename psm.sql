@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2020 at 08:02 AM
+-- Generation Time: Jun 08, 2020 at 05:04 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -25,6 +25,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kehadiran`
+--
+
+CREATE TABLE `kehadiran` (
+  `IDKehadiran` int(11) NOT NULL,
+  `JenisPeperiksaan` varchar(50) COLLATE utf8_bin NOT NULL,
+  `Kursus` varchar(50) COLLATE utf8_bin NOT NULL,
+  `NoMatrik` varchar(10) COLLATE utf8_bin NOT NULL,
+  `StatusKehadiran` varchar(50) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `kehadiran`
+--
+
+INSERT INTO `kehadiran` (`IDKehadiran`, `JenisPeperiksaan`, `Kursus`, `NoMatrik`, `StatusKehadiran`) VALUES
+(1, 'Ujian', 'Pengaturcaraan Dot Net', 'Di170001', 'Hadir'),
+(2, 'Ujian', 'Pengaturcaraan Dot Net', 'Di170081', 'TidakHadir'),
+(3, 'Ujian', 'Pengaturcaraan Dot Net', 'Di170039', 'TidakHadir'),
+(4, 'Ujian', 'Pengaturcaraan Dot Net', 'Di170051', 'Hadir'),
+(5, 'Ujian', 'Pengaturcaraan Dot Net', 'Di170046', 'TidakHadir'),
+(6, 'Peperiksaan Akhir', 'Pengaturcaraan Web', 'Di170009', 'Hadir'),
+(7, 'Peperiksaan Akhir', 'Pengaturcaraan Web', 'DI170032', 'TidakHadir'),
+(8, 'Peperiksaan Akhir', 'Pengaturcaraan Web', 'DI170044', 'Hadir'),
+(9, 'Peperiksaan Akhir', 'Pengaturcaraan Web', 'Di170001', 'TidakHadir'),
+(10, 'Peperiksaan Akhir', 'Pengaturcaraan Web', 'Di170020', 'Hadir');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `kursus`
 --
 
@@ -39,11 +69,11 @@ CREATE TABLE `kursus` (
 --
 
 INSERT INTO `kursus` (`KodKursus`, `NamaKursus`, `JumlahSeksyen`) VALUES
-('BIT1003', 'Pengaturcaraan Web', 5),
-('BIT30303', 'Pengaturcaraan Dot Net', 5),
-('DKA20202', 'Pengurusan Pasir', 5),
 ('DKU22123', 'Pembinaan Bangunan', 6),
-('PJK20102', 'Pengurusan Buku', 3);
+('BIT30303', 'Pengaturcaraan Dot Net', 5),
+('BIT1003', 'Pengaturcaraan Web', 5),
+('PJK20102', 'Pengurusan Buku', 3),
+('DKA20202', 'Pengurusan Pasir', 5);
 
 -- --------------------------------------------------------
 
@@ -63,12 +93,19 @@ CREATE TABLE `kursuspelajar` (
 --
 
 INSERT INTO `kursuspelajar` (`IDKursusPelajar`, `NoMatrik`, `NamaKursus`, `Seksyen`) VALUES
-(29, 'Di170056', 'Pengurusan Pasir', 1),
 (30, 'Di170009', 'Pengaturcaraan Web', 3),
 (31, 'DI170032', 'Pembinaan Bangunan', 2),
 (32, 'DI170044', 'Pengurusan Buku', 3),
 (33, 'Di170020', 'Pembinaan Bangunan', 1),
-(34, 'Di170001', 'Pengaturcaraan Dot Net', 3);
+(34, 'Di170001', 'Pengaturcaraan Dot Net', 3),
+(35, 'Di170081', 'Pengaturcaraan Dot Net', 1),
+(36, 'Di170039', 'Pengaturcaraan Dot Net', 3),
+(37, 'Di170051', 'Pengaturcaraan Dot Net', 3),
+(38, 'Di170046', 'Pengaturcaraan Dot Net', 4),
+(39, 'DI170032', 'Pengaturcaraan Web', 1),
+(40, 'DI170044', 'Pengaturcaraan Web', 2),
+(41, 'Di170001', 'Pengaturcaraan Web', 3),
+(42, 'Di170020', 'Pengaturcaraan Web', 5);
 
 -- --------------------------------------------------------
 
@@ -96,7 +133,10 @@ INSERT INTO `pelajar` (`NoMatrik`, `NamaPelajar`, `NoKp`, `NoPas`, `NamaProgram`
 ('Di170001', 'Kamal Rusyadi', '990807045398', '', 'Sarjana Muda Animasi', 'Fakulti Sains Komputer Dan Teknologi Maklumat', 'Tahun2 Semester2'),
 ('Di170009', 'Ahmad Fitri', '990207045872', '', 'Sarjana Muda Sekuriti', 'Fakulti Teknologi Pengurusan', 'Tahun2 Semester1'),
 ('Di170020', 'Syukrie Mohamad', '990807045362', '', 'Sarjana Muda Animasi', 'Fakulti Sains Komputer Dan Teknologi Maklumat', 'Tahun2 Semester1'),
-('Di170056', 'Haikal Shah', '970324128364', '', 'Sarjana Muda Teknologi Maklumat', 'Fakulti Sains Komputer Dan Teknologi Maklumat', 'Tahun2 Semester1');
+('Di170039', 'Muhammad Ezlan', '970321103322', '', 'Sarjana Muda Teknologi Maklumat', 'Fakulti Sains Komputer Dan Teknologi Maklumat', 'Tahun1 Semester2'),
+('Di170046', 'Muhammad Hazim', '970321107654', '', 'Sarjana Muda Teknologi Maklumat', 'Fakulti Sains Komputer Dan Teknologi Maklumat', 'Tahun2 Semester1'),
+('Di170051', 'Muhammad Hazman', '990207045872', '', 'Sarjana Muda Teknologi Maklumat', 'Fakulti Sains Komputer Dan Teknologi Maklumat', 'Tahun2 Semester2'),
+('Di170081', 'Haikal Shah', '990807045362', '', 'Sarjana Muda Teknologi Maklumat', 'Fakulti Sains Komputer Dan Teknologi Maklumat', 'Tahun2 Semester1');
 
 -- --------------------------------------------------------
 
@@ -114,8 +154,8 @@ CREATE TABLE `pensyarah` (
 --
 
 INSERT INTO `pensyarah` (`IdPensyarah`, `NamaPensyarah`) VALUES
-('AE1231245', 'Mohd Halim Othman'),
-('AF1933002', 'Encik Mohd Hatta Bin Md Hani');
+('AF1933002', 'Encik Mohd Hatta Bin Md Hani'),
+('AE1231245', 'Mohd Halim Othman');
 
 -- --------------------------------------------------------
 
@@ -162,6 +202,7 @@ CREATE TABLE `peperiksaan` (
 --
 
 INSERT INTO `peperiksaan` (`JenisPeperiksaan`, `Kursus`, `NamaPensyarah`, `Tempat`, `Tarikh`, `Masa`) VALUES
+('Peperiksaan Akhir', 'Pengaturcaraan Web', 'Mohd Halim Othman', 'F2 Bawah', '2020-07-15', '10:00:00'),
 ('Ujian', 'Pengaturcaraan Dot Net', 'Encik Mohd Hatta Bin Md Hani', 'G3 Bawah', '2020-04-15', '05:00:00');
 
 -- --------------------------------------------------------
@@ -210,16 +251,24 @@ INSERT INTO `tempat` (`NamaTempat`, `Kapasiti`) VALUES
 --
 
 --
+-- Indexes for table `kehadiran`
+--
+ALTER TABLE `kehadiran`
+  ADD PRIMARY KEY (`IDKehadiran`);
+
+--
 -- Indexes for table `kursus`
 --
 ALTER TABLE `kursus`
-  ADD PRIMARY KEY (`KodKursus`);
+  ADD PRIMARY KEY (`NamaKursus`);
 
 --
 -- Indexes for table `kursuspelajar`
 --
 ALTER TABLE `kursuspelajar`
-  ADD PRIMARY KEY (`IDKursusPelajar`);
+  ADD PRIMARY KEY (`IDKursusPelajar`),
+  ADD KEY `NamaKursus` (`NamaKursus`),
+  ADD KEY `NoMatrik` (`NoMatrik`);
 
 --
 -- Indexes for table `pelajar`
@@ -231,7 +280,7 @@ ALTER TABLE `pelajar`
 -- Indexes for table `pensyarah`
 --
 ALTER TABLE `pensyarah`
-  ADD PRIMARY KEY (`IdPensyarah`);
+  ADD PRIMARY KEY (`NamaPensyarah`);
 
 --
 -- Indexes for table `pentadbir`
@@ -243,7 +292,9 @@ ALTER TABLE `pentadbir`
 -- Indexes for table `peperiksaan`
 --
 ALTER TABLE `peperiksaan`
-  ADD PRIMARY KEY (`JenisPeperiksaan`);
+  ADD PRIMARY KEY (`JenisPeperiksaan`),
+  ADD KEY `Kursus` (`Kursus`),
+  ADD KEY `NamaPensyarah` (`NamaPensyarah`);
 
 --
 -- Indexes for table `program`
@@ -262,10 +313,34 @@ ALTER TABLE `tempat`
 --
 
 --
+-- AUTO_INCREMENT for table `kehadiran`
+--
+ALTER TABLE `kehadiran`
+  MODIFY `IDKehadiran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `kursuspelajar`
 --
 ALTER TABLE `kursuspelajar`
-  MODIFY `IDKursusPelajar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `IDKursusPelajar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `kursuspelajar`
+--
+ALTER TABLE `kursuspelajar`
+  ADD CONSTRAINT `kursuspelajar_ibfk_1` FOREIGN KEY (`NamaKursus`) REFERENCES `kursus` (`NamaKursus`),
+  ADD CONSTRAINT `kursuspelajar_ibfk_2` FOREIGN KEY (`NoMatrik`) REFERENCES `pelajar` (`NoMatrik`);
+
+--
+-- Constraints for table `peperiksaan`
+--
+ALTER TABLE `peperiksaan`
+  ADD CONSTRAINT `peperiksaan_ibfk_1` FOREIGN KEY (`Kursus`) REFERENCES `kursus` (`NamaKursus`),
+  ADD CONSTRAINT `peperiksaan_ibfk_2` FOREIGN KEY (`NamaPensyarah`) REFERENCES `pensyarah` (`NamaPensyarah`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

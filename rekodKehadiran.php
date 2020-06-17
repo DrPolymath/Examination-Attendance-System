@@ -34,4 +34,5 @@
     } else {
         echo "failed";
     }
+    $pdo = null;
 ?>

@@ -51,8 +51,6 @@ if (isset($_POST["daftar"])) {
 </head>
 
 <body>
-   
-    
          <style>
         body{
             background-image: url(images/TTA_library.jpg)

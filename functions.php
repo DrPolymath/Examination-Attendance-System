@@ -551,7 +551,7 @@ function janaJadualPeperiksaanKehadiranRekod()
           <td>'.$row["Tempat"].'</td>
           <td>'.$row["Tarikh"].'</td>
           <td>'.$row["Masa"].'</td>
-          <td><button class="btn btn--radius-2 btn--blue" type="button" data-toggle="modal" data-target="#SenaraiPelajar" onclick="janaSenaraiPelajar(\''.$row["JenisPeperiksaan"].'\',\''.$row["Kursus"].'\',\''.$row["NamaPensyarah"].'\',\''.$row["Tempat"].'\',\''.$row["Tarikh"].'\',\''.$row["Masa"].'\')">Jana Laporan Kehadiran</button></td>
+          <td><button class="btn btn--radius-2 btn--blue" type="button" data-toggle="modal" data-target="#SenaraiPelajar" onclick="janaPDF(\''.$row["JenisPeperiksaan"].'\',\''.$row["Kursus"].'\',\''.$row["NamaPensyarah"].'\',\''.$row["Tempat"].'\',\''.$row["Tarikh"].'\',\''.$row["Masa"].'\')">Jana Laporan Kehadiran</button></td>
         </tr>
         ';
     }

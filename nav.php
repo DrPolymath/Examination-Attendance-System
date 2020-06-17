@@ -42,7 +42,7 @@
 <polygon class="st0" points="60.1,260.3 167.4,341 180.4,380.3 "/> //
 </svg> -->
         
-		<h1 class="brand brand-name navbar-left" style="padding-right:20px;">SKPMBCJ</h1>
+		<h1 class="brand brand-name navbar-left" style="padding-right:20px;"><img src="Capture.PNG" width="110"></h1>
         
         <div class="collapse navbar-collapse navbar-right" id="myNavbar">
             <ul class="nav navbar-nav">

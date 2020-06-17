@@ -86,6 +86,11 @@ if (isset($_POST["daftar"])) {
     <!-- Main JS-->
     <script src="js/global.js"></script>
 
+<script>
+function janaPDF(JenisPeperiksaan,Kursus,NamaPensyarah,Tempat,Tarikh,Masa){
+  window.open('generatePDF.php?JenisPeperiksaan='+JenisPeperiksaan+"&Kursus="+Kursus+"&NamaPensyarah="+NamaPensyarah+"&Tempat="+Tempat+"&Tarikh="+Tarikh+"&Masa="+Masa, '_blank');
+}
+</script>
 </body>
 
 </html>
